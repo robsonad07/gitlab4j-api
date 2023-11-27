@@ -41,8 +41,7 @@ public class Oauth2LoginStreamingOutput implements StreamingOutput, AutoCloseabl
 
         // Output the quoted password
         writer.write('"');
-        for (int i = 0, length = password.length(); i < length; i++) {
-
+        for (int i = 0; i < password.length(); i++) {
             char c = password.charAt(i);
             if (c == '"' || c == '\\') {
                 writer.write('\\');
