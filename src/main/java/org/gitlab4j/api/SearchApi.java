@@ -109,7 +109,7 @@ public class SearchApi extends AbstractApi {
                 throw new GitLabApiException("Invalid SearchScope [" + scope + "]");
         }
     }
- 
+
     /**
      * Search within the specified group.  If a user is not a member of a group and the group is private,
      * a request on that group will result to a 404 status code.
@@ -234,7 +234,7 @@ public class SearchApi extends AbstractApi {
      * @param scope search the expression within the specified scope. Currently these scopes are supported:
      *               issues, merge_requests, milestones, notes, wiki_blobs, commits, blobs, users
      * @param search the search query
-     * @param ref the name of a repository branch or tag to search on. The project’s default branch is used by 
+     * @param ref the name of a repository branch or tag to search on. The project’s default branch is used by
      *             default. This is only applicable for scopes: commits, blobs, and wiki_blobs.
      * @return a List containing the object type specified by the scope
      * @throws GitLabApiException if any exception occurs
@@ -243,7 +243,7 @@ public class SearchApi extends AbstractApi {
     public List<?> projectSearch(Object projectIdOrPath, ProjectSearchScope scope, String search, String ref) throws GitLabApiException {
         return (projectSearch(projectIdOrPath, scope, search, ref, this.getDefaultPerPage()).all());
     }
-    
+
     /**
      * Search within the specified project.  If a user is not a member of a project and the project is private,
      * a request on that project will result to a 404 status code.
@@ -272,7 +272,7 @@ public class SearchApi extends AbstractApi {
      * @param scope search the expression within the specified scope. Currently these scopes are supported:
      *               issues, merge_requests, milestones, notes, wiki_blobs, commits, blobs, users
      * @param search the search query
-     * @param ref the name of a repository branch or tag to search on. The project’s default branch is used by 
+     * @param ref the name of a repository branch or tag to search on. The project’s default branch is used by
      *             default. This is only applicable for scopes: commits, blobs, and wiki_blobs.
      * @return a Stream containing the object type specified by the scope
      * @throws GitLabApiException if any exception occurs
@@ -302,7 +302,7 @@ public class SearchApi extends AbstractApi {
         return projectSearch(projectIdOrPath, scope, search, null, itemsPerPage);
     }
 
-    
+
     /**
      * Search within the specified project.  If a user is not a member of a project and the project is private,
      * a request on that project will result to a 404 status code.
@@ -313,7 +313,7 @@ public class SearchApi extends AbstractApi {
      * @param scope search the expression within the specified scope. Currently these scopes are supported:
      *               issues, merge_requests, milestones, notes, wiki_blobs, commits, blobs, users
      * @param search the search query
-     * @param ref the name of a repository branch or tag to search on. The project’s default branch is used by 
+     * @param ref the name of a repository branch or tag to search on. The project’s default branch is used by
      *             default. This is only applicable for scopes: commits, blobs, and wiki_blobs.
      * @param itemsPerPage the number of items that will be fetched per page
      * @return a Pager containing the object type specified by the scope
@@ -326,11 +326,9 @@ public class SearchApi extends AbstractApi {
                 .withParam("scope", scope, true)
                 .withParam("search", search, true)
                 .withParam("ref", ref, false);
-        
-        if (ref != null) {
-            if (!scope.equals(ProjectSearchScope.BLOBS) && !scope.equals(ProjectSearchScope.WIKI_BLOBS) && !scope.equals(ProjectSearchScope.COMMITS)) {
-                throw new GitLabApiException("Ref parameter is only applicable for scopes: commits, blobs, and wiki_blobs");
-            }
+
+        if (ref != null && !scope.equals(ProjectSearchScope.BLOBS) && !scope.equals(ProjectSearchScope.WIKI_BLOBS) && !scope.equals(ProjectSearchScope.COMMITS)) {
+            throw new GitLabApiException("Ref parameter is only applicable for scopes: commits, blobs, and wiki_blobs");
         }
 
         switch (scope) {
