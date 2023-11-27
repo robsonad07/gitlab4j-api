@@ -657,6 +657,19 @@ public abstract class AbstractApi implements Constants {
     }
 
     /**
+     * Checks whether the combination of expected and actual HTTP response codes is considered invalid.
+     * If the expected code is 200-204 and the response code is 200-204 it is OK.  We do this because
+     * GitLab is constantly changing the expected code in the 200 to 204 range
+     *
+     * @param expectedResponseCode The expected HTTP response code.
+     * @param responseCode         The actual HTTP response code.
+     * @return True if the combination is invalid, false otherwise.
+     */
+    private boolean isInvalidResponseCode(int expectedResponseCode, int responseCode) {
+        return expectedResponseCode > 204 || responseCode > 204 || expectedResponseCode < 200 || responseCode < 200;
+    }
+
+    /**
      * Validates response the response from the server against the expected HTTP status and
      * the returned secret token, if either is not correct will throw a GitLabApiException.
      *
@@ -670,12 +683,8 @@ public abstract class AbstractApi implements Constants {
         int responseCode = response.getStatus();
         int expectedResponseCode = expected.getStatusCode();
 
-        if (responseCode != expectedResponseCode) {
-
-            // If the expected code is 200-204 and the response code is 200-204 it is OK.  We do this because
-            // GitLab is constantly changing the expected code in the 200 to 204 range
-            if (expectedResponseCode > 204 || responseCode > 204 || expectedResponseCode < 200 || responseCode < 200)
-                throw new GitLabApiException(response);
+        if (responseCode != expectedResponseCode && isInvalidResponseCode(expectedResponseCode, responseCode)) {
+            throw new GitLabApiException(response);
         }
 
         if (!getApiClient().validateSecretToken(response)) {
