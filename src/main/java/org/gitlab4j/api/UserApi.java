@@ -1004,10 +1004,8 @@ public class UserApi extends AbstractApi {
      */
     Form userToForm(User user, Integer projectsLimit, CharSequence password, Boolean resetPassword, boolean create) {
 
-        if (create) {
-            if ((password == null || password.toString().trim().isEmpty()) && !resetPassword) {
-                throw new IllegalArgumentException("either password or reset_password must be set");
-            }
+        if (create && (password == null || password.toString().trim().isEmpty()) && !resetPassword) {
+            throw new IllegalArgumentException("either password or reset_password must be set");
         }
 
         projectsLimit = (projectsLimit == null) ? user.getProjectsLimit() : projectsLimit;
