@@ -834,7 +834,7 @@ public class GitLabApi implements AutoCloseable {
      */
     public ApplicationsApi getApplicationsApi() {
         ApplicationsApi localRef = applicationsApi;
-    
+
         if (localRef == null) {
             synchronized (this) {
                 localRef = applicationsApi;
@@ -867,7 +867,7 @@ public class GitLabApi implements AutoCloseable {
             }
         }
 
-        return localRef; 
+        return localRef;
     }
 
     /**
@@ -877,16 +877,19 @@ public class GitLabApi implements AutoCloseable {
      * @return the AuditEventApi instance owned by this GitLabApi instance
      */
     public AuditEventApi getAuditEventApi() {
+        AuditEventApi localRef = auditEventApi;
 
-        if (auditEventApi == null) {
+        if (localRef == null) {
             synchronized (this) {
-                if (auditEventApi == null) {
-                    auditEventApi = new AuditEventApi(this);
+                localRef = auditEventApi;
+                if (localRef == null) {
+                    localRef = new AuditEventApi(this);
+                    auditEventApi = localRef;
                 }
             }
         }
 
-        return (auditEventApi);
+        return localRef;
     }
 
     /**
@@ -896,16 +899,19 @@ public class GitLabApi implements AutoCloseable {
      * @return the AwardEmojiApi instance owned by this GitLabApi instance
      */
     public AwardEmojiApi getAwardEmojiApi() {
+        AwardEmojiApi localRef = awardEmojiApi;
 
-        if (awardEmojiApi == null) {
+        if (localRef == null) {
             synchronized (this) {
-                if (awardEmojiApi == null) {
-                    awardEmojiApi = new AwardEmojiApi(this);
+                localRef = awardEmojiApi;
+                if (localRef == null) {
+                    localRef = new AwardEmojiApi(this);
+                    awardEmojiApi = localRef;
                 }
             }
         }
 
-        return (awardEmojiApi);
+        return localRef;
     }
 
     /**
@@ -915,16 +921,19 @@ public class GitLabApi implements AutoCloseable {
      * @return the BoardsApi instance owned by this GitLabApi instance
      */
     public BoardsApi getBoardsApi() {
+        BoardsApi localRef = boardsApi;
 
-        if (boardsApi == null) {
+        if (localRef == null) {
             synchronized (this) {
-                if (boardsApi == null) {
-                    boardsApi = new BoardsApi(this);
+                localRef = boardsApi;
+                if (localRef == null) {
+                    localRef = new BoardsApi(this);
+                    boardsApi = localRef;
                 }
             }
         }
 
-        return (boardsApi);
+        return localRef;
     }
 
     /**
@@ -934,16 +943,19 @@ public class GitLabApi implements AutoCloseable {
      * @return the CommitsApi instance owned by this GitLabApi instance
      */
     public CommitsApi getCommitsApi() {
+        CommitsApi localRef = commitsApi;
 
-        if (commitsApi == null) {
+        if (localRef == null) {
             synchronized (this) {
-                if (commitsApi == null) {
-                    commitsApi = new CommitsApi(this);
+                localRef = commitsApi;
+                if (localRef == null) {
+                    localRef = new CommitsApi(this);
+                    commitsApi = localRef;
                 }
             }
         }
 
-        return (commitsApi);
+        return localRef;
     }
 
     /**
@@ -953,9 +965,9 @@ public class GitLabApi implements AutoCloseable {
      * @return the ContainerRegistryApi instance owned by this GitLabApi instance
      */
     public ContainerRegistryApi getContainerRegistryApi() {
-        ContainerRegistryApi localInstance = containerRegistryApi; 
-    
-        if (localInstance == null) { 
+        ContainerRegistryApi localInstance = containerRegistryApi;
+
+        if (localInstance == null) {
             synchronized (this) {
                 localInstance = containerRegistryApi;
                 if (localInstance == null) {
@@ -963,7 +975,7 @@ public class GitLabApi implements AutoCloseable {
                 }
             }
         }
-    
+
         return localInstance;
     }
 
@@ -974,16 +986,19 @@ public class GitLabApi implements AutoCloseable {
      * @return the DeployKeysApi instance owned by this GitLabApi instance
      */
     public DeployKeysApi getDeployKeysApi() {
+        DeployKeysApi localRef = deployKeysApi;
 
-        if (deployKeysApi == null) {
+        if (localRef == null) {
             synchronized (this) {
-                if (deployKeysApi == null) {
-                    deployKeysApi = new DeployKeysApi(this);
+                localRef = deployKeysApi;
+                if (localRef == null) {
+                    localRef = new DeployKeysApi(this);
+                    deployKeysApi = localRef;
                 }
             }
         }
 
-        return (deployKeysApi);
+        return localRef;
     }
 
     /**
@@ -993,16 +1008,19 @@ public class GitLabApi implements AutoCloseable {
      * @return the DeploymentsApi instance owned by this GitLabApi instance
      */
     public DeploymentsApi getDeploymentsApi() {
+        DeploymentsApi localRef = deploymentsApi;
 
-        if (deploymentsApi == null) {
+        if (localRef == null) {
             synchronized (this) {
-                if (deploymentsApi == null) {
-                    deploymentsApi = new DeploymentsApi(this);
+                localRef = deploymentsApi;
+                if (localRef == null) {
+                    localRef = new DeploymentsApi(this);
+                    deploymentsApi = localRef;
                 }
             }
         }
 
-        return (deploymentsApi);
+        return localRef;
     }
 
     /**
@@ -1011,17 +1029,20 @@ public class GitLabApi implements AutoCloseable {
      *
      * @return the DeployTokensApi instance owned by this GitLabApi instance
      */
-    public DeployTokensApi getDeployTokensApi(){
+    public DeployTokensApi getDeployTokensApi() {
+        DeployTokensApi localRef = deployTokensApi;
 
-        if (deployTokensApi == null) {
+        if (localRef == null) {
             synchronized (this) {
-                if (deployTokensApi == null) {
-                    deployTokensApi = new DeployTokensApi(this);
+                localRef = deployTokensApi;
+                if (localRef == null) {
+                    localRef = new DeployTokensApi(this);
+                    deployTokensApi = localRef;
                 }
             }
         }
 
-        return (deployTokensApi);
+        return localRef;
     }
 
     /**
@@ -1031,16 +1052,19 @@ public class GitLabApi implements AutoCloseable {
      * @return the DiscussionsApi instance owned by this GitLabApi instance
      */
     public DiscussionsApi getDiscussionsApi() {
+        DiscussionsApi localRef = discussionsApi;
 
-        if (discussionsApi == null) {
+        if (localRef == null) {
             synchronized (this) {
-                if (discussionsApi == null) {
-                    discussionsApi = new DiscussionsApi(this);
+                localRef = discussionsApi;
+                if (localRef == null) {
+                    localRef = new DiscussionsApi(this);
+                    discussionsApi = localRef;
                 }
             }
         }
 
-        return (discussionsApi);
+        return localRef;
     }
 
     /**
@@ -1050,16 +1074,19 @@ public class GitLabApi implements AutoCloseable {
      * @return the EnvironmentsApi instance owned by this GitLabApi instance
      */
     public EnvironmentsApi getEnvironmentsApi() {
+        EnvironmentsApi localRef = environmentsApi;
 
-        if (environmentsApi == null) {
+        if (localRef == null) {
             synchronized (this) {
-                if (environmentsApi == null) {
-                    environmentsApi = new EnvironmentsApi(this);
+                localRef = environmentsApi;
+                if (localRef == null) {
+                    localRef = new EnvironmentsApi(this);
+                    environmentsApi = localRef;
                 }
             }
         }
 
-        return (environmentsApi);
+        return localRef;
     }
 
     /**
@@ -1069,16 +1096,19 @@ public class GitLabApi implements AutoCloseable {
      * @return the EpicsApi instance owned by this GitLabApi instance
      */
     public EpicsApi getEpicsApi() {
+        EpicsApi localRef = epicsApi;
 
-        if (epicsApi == null) {
+        if (localRef == null) {
             synchronized (this) {
-                if (epicsApi == null) {
-                    epicsApi = new EpicsApi(this);
+                localRef = epicsApi;
+                if (localRef == null) {
+                    localRef = new EpicsApi(this);
+                    epicsApi = localRef;
                 }
             }
         }
 
-        return (epicsApi);
+        return localRef;
     }
 
     /**
@@ -1088,16 +1118,19 @@ public class GitLabApi implements AutoCloseable {
      * @return the EventsApi instance owned by this GitLabApi instance
      */
     public EventsApi getEventsApi() {
+        EventsApi localRef = eventsApi;
 
-        if (eventsApi == null) {
+        if (localRef == null) {
             synchronized (this) {
-                if (eventsApi == null) {
-                    eventsApi = new EventsApi(this);
+                localRef = eventsApi;
+                if (localRef == null) {
+                    localRef = new EventsApi(this);
+                    eventsApi = localRef;
                 }
             }
         }
 
-        return (eventsApi);
+        return localRef;
     }
 
     /**
@@ -1107,16 +1140,19 @@ public class GitLabApi implements AutoCloseable {
      * @return the ExternalStatusCheckApi instance owned by this GitLabApi instance
      */
     public ExternalStatusCheckApi getExternalStatusCheckApi() {
+        ExternalStatusCheckApi localRef = externalStatusCheckApi;
 
-        if (externalStatusCheckApi == null) {
+        if (localRef == null) {
             synchronized (this) {
-                if (externalStatusCheckApi == null) {
-                    externalStatusCheckApi = new ExternalStatusCheckApi(this);
+                localRef = externalStatusCheckApi;
+                if (localRef == null) {
+                    localRef = new ExternalStatusCheckApi(this);
+                    externalStatusCheckApi = localRef;
                 }
             }
         }
 
-        return (externalStatusCheckApi);
+        return localRef;
     }
 
     /**
@@ -1125,14 +1161,20 @@ public class GitLabApi implements AutoCloseable {
      * @return the GitLabCiYamlApi instance owned by this GitLabApi instance
      */
     public GitLabCiYamlApi getGitLabCiYamlApi() {
-        synchronized (this) {
-            if (gitLabCiYaml == null) {
-                gitLabCiYaml = new GitLabCiYamlApi(this);
+        GitLabCiYamlApi localRef = gitLabCiYaml;
+
+        if (localRef == null) {
+            synchronized (this) {
+                localRef = gitLabCiYaml;
+                if (localRef == null) {
+                    localRef = new GitLabCiYamlApi(this);
+                    gitLabCiYaml = localRef;
+                }
             }
         }
-        return gitLabCiYaml;
-    }
 
+        return localRef;
+    }
 
     /**
      * Gets the GroupApi instance owned by this GitLabApi instance. The GroupApi is used
@@ -1141,16 +1183,19 @@ public class GitLabApi implements AutoCloseable {
      * @return the GroupApi instance owned by this GitLabApi instance
      */
     public GroupApi getGroupApi() {
+        GroupApi localRef = groupApi;
 
-        if (groupApi == null) {
+        if (localRef == null) {
             synchronized (this) {
-                if (groupApi == null) {
-                    groupApi = new GroupApi(this);
+                localRef = groupApi;
+                if (localRef == null) {
+                    localRef = new GroupApi(this);
+                    groupApi = localRef;
                 }
             }
         }
 
-        return (groupApi);
+        return localRef;
     }
 
     /**
@@ -1160,16 +1205,19 @@ public class GitLabApi implements AutoCloseable {
      * @return the HealthCheckApi instance owned by this GitLabApi instance
      */
     public HealthCheckApi getHealthCheckApi() {
+        HealthCheckApi localRef = healthCheckApi;
 
-        if (healthCheckApi == null) {
+        if (localRef == null) {
             synchronized (this) {
-                if (healthCheckApi == null) {
-                    healthCheckApi = new HealthCheckApi(this);
+                localRef = healthCheckApi;
+                if (localRef == null) {
+                    localRef = new HealthCheckApi(this);
+                    healthCheckApi = localRef;
                 }
             }
         }
 
-        return (healthCheckApi);
+        return localRef;
     }
 
     /**
@@ -1179,16 +1227,19 @@ public class GitLabApi implements AutoCloseable {
      * @return the ImportExportApi instance owned by this GitLabApi instance
      */
     public ImportExportApi getImportExportApi() {
+        ImportExportApi localRef = importExportApi;
 
-        if (importExportApi == null) {
+        if (localRef == null) {
             synchronized (this) {
-                if (importExportApi == null) {
-                    importExportApi = new ImportExportApi(this);
+                localRef = importExportApi;
+                if (localRef == null) {
+                    localRef = new ImportExportApi(this);
+                    importExportApi = localRef;
                 }
             }
         }
 
-        return (importExportApi);
+        return localRef;
     }
 
     /**
@@ -1198,16 +1249,19 @@ public class GitLabApi implements AutoCloseable {
      * @return the IssuesApi instance owned by this GitLabApi instance
      */
     public IssuesApi getIssuesApi() {
+        IssuesApi localRef = issuesApi;
 
-        if (issuesApi == null) {
+        if (localRef == null) {
             synchronized (this) {
-                if (issuesApi == null) {
-                    issuesApi = new IssuesApi(this);
+                localRef = issuesApi;
+                if (localRef == null) {
+                    localRef = new IssuesApi(this);
+                    issuesApi = localRef;
                 }
             }
         }
 
-        return (issuesApi);
+        return localRef;
     }
 
     /**
@@ -1217,20 +1271,24 @@ public class GitLabApi implements AutoCloseable {
      * @return the JobsApi instance owned by this GitLabApi instance
      */
     public JobApi getJobApi() {
+        JobApi localRef = jobApi;
 
-        if (jobApi == null) {
+        if (localRef == null) {
             synchronized (this) {
-                if (jobApi == null) {
-                    jobApi = new JobApi(this);
+                localRef = jobApi;
+                if (localRef == null) {
+                    localRef = new JobApi(this);
+                    jobApi = localRef;
                 }
             }
         }
 
-        return (jobApi);
+        return localRef;
     }
 
     public LabelsApi getLabelsApi() {
         LabelsApi result = labelsApi;
+
         if (result == null) {
             synchronized (this) {
                 result = labelsApi;
@@ -1240,6 +1298,7 @@ public class GitLabApi implements AutoCloseable {
                 }
             }
         }
+
         return result;
     }
 
@@ -1250,16 +1309,19 @@ public class GitLabApi implements AutoCloseable {
      * @return the LicenseApi instance owned by this GitLabApi instance
      */
     public LicenseApi getLicenseApi() {
+        LicenseApi localRef = licenseApi;
 
-        if (licenseApi == null) {
+        if (localRef == null) {
             synchronized (this) {
-                if (licenseApi == null) {
-                    licenseApi = new LicenseApi(this);
+                localRef = licenseApi;
+                if (localRef == null) {
+                    localRef = new LicenseApi(this);
+                    licenseApi = localRef;
                 }
             }
         }
 
-        return (licenseApi);
+        return localRef;
     }
 
     /**
@@ -1269,18 +1331,20 @@ public class GitLabApi implements AutoCloseable {
      * @return the LicenseTemplatesApi instance owned by this GitLabApi instance
      */
     public LicenseTemplatesApi getLicenseTemplatesApi() {
+        LicenseTemplatesApi localRef = licenseTemplatesApi;
 
-        if (licenseTemplatesApi == null) {
+        if (localRef == null) {
             synchronized (this) {
-                if (licenseTemplatesApi == null) {
-                    licenseTemplatesApi = new LicenseTemplatesApi(this);
+                localRef = licenseTemplatesApi;
+                if (localRef == null) {
+                    localRef = new LicenseTemplatesApi(this);
+                    licenseTemplatesApi = localRef;
                 }
             }
         }
 
-        return (licenseTemplatesApi);
+        return localRef;
     }
-
 
     /**
      * Gets the MarkdownApi instance owned by this GitLabApi instance. The MarkdownApi is used
@@ -1289,16 +1353,19 @@ public class GitLabApi implements AutoCloseable {
      * @return the MarkdownApi instance owned by this GitLabApi instance
      */
     public MarkdownApi getMarkdownApi() {
+        MarkdownApi localRef = markdownApi;
 
-        if (markdownApi == null) {
+        if (localRef == null) {
             synchronized (this) {
-                if (markdownApi == null) {
-                    markdownApi = new MarkdownApi(this);
+                localRef = markdownApi;
+                if (localRef == null) {
+                    localRef = new MarkdownApi(this);
+                    markdownApi = localRef;
                 }
             }
         }
 
-        return (markdownApi);
+        return localRef;
     }
 
     /**
@@ -1308,34 +1375,40 @@ public class GitLabApi implements AutoCloseable {
      * @return the MergeRequestApi instance owned by this GitLabApi instance
      */
     public MergeRequestApi getMergeRequestApi() {
+        MergeRequestApi localRef = mergeRequestApi;
 
-        if (mergeRequestApi == null) {
+        if (localRef == null) {
             synchronized (this) {
-                if (mergeRequestApi == null) {
-                    mergeRequestApi = new MergeRequestApi(this);
+                localRef = mergeRequestApi;
+                if (localRef == null) {
+                    localRef = new MergeRequestApi(this);
+                    mergeRequestApi = localRef;
                 }
             }
         }
 
-        return (mergeRequestApi);
+        return localRef;
     }
 
     /**
-     * Gets the MilsestonesApi instance owned by this GitLabApi instance.
+     * Gets the MilestonesApi instance owned by this GitLabApi instance.
      *
-     * @return the MilsestonesApi instance owned by this GitLabApi instance
+     * @return the MilestonesApi instance owned by this GitLabApi instance
      */
     public MilestonesApi getMilestonesApi() {
+        MilestonesApi localRef = milestonesApi;
 
-        if (milestonesApi == null) {
+        if (localRef == null) {
             synchronized (this) {
-                if (milestonesApi == null) {
-                    milestonesApi = new MilestonesApi(this);
+                localRef = milestonesApi;
+                if (localRef == null) {
+                    localRef = new MilestonesApi(this);
+                    milestonesApi = localRef;
                 }
             }
         }
 
-        return (milestonesApi);
+        return localRef;
     }
 
     /**
@@ -1345,7 +1418,8 @@ public class GitLabApi implements AutoCloseable {
      * @return the NamespaceApi instance owned by this GitLabApi instance
      */
     public NamespaceApi getNamespaceApi() {
-        NamespaceApi result = namespaceApi; 
+        NamespaceApi result = namespaceApi;
+
         if (result == null) {
             synchronized (this) {
                 result = namespaceApi;
@@ -1354,6 +1428,7 @@ public class GitLabApi implements AutoCloseable {
                 }
             }
         }
+
         return result;
     }
 
@@ -1364,35 +1439,41 @@ public class GitLabApi implements AutoCloseable {
      * @return the NotesApi instance owned by this GitLabApi instance
      */
     public NotesApi getNotesApi() {
+        NotesApi localRef = notesApi;
 
-        if (notesApi == null) {
+        if (localRef == null) {
             synchronized (this) {
-                if (notesApi == null) {
-                    notesApi = new NotesApi(this);
+                localRef = notesApi;
+                if (localRef == null) {
+                    localRef = new NotesApi(this);
+                    notesApi = localRef;
                 }
             }
         }
 
-        return (notesApi);
+        return localRef;
     }
 
     /**
-     * Gets the NotesApi instance owned by this GitLabApi instance. The NotesApi is used
-     * to perform all notes related API calls.
+     * Gets the NotificationSettingsApi instance owned by this GitLabApi instance. The NotificationSettingsApi is used
+     * to perform all notification settings related API calls.
      *
-     * @return the NotesApi instance owned by this GitLabApi instance
+     * @return the NotificationSettingsApi instance owned by this GitLabApi instance
      */
     public NotificationSettingsApi getNotificationSettingsApi() {
+        NotificationSettingsApi localRef = notificationSettingsApi;
 
-        if (notificationSettingsApi == null) {
+        if (localRef == null) {
             synchronized (this) {
-                if (notificationSettingsApi == null) {
-                    notificationSettingsApi = new NotificationSettingsApi(this);
+                localRef = notificationSettingsApi;
+                if (localRef == null) {
+                    localRef = new NotificationSettingsApi(this);
+                    notificationSettingsApi = localRef;
                 }
             }
         }
 
-        return (notificationSettingsApi);
+        return localRef;
     }
 
     /**
@@ -1402,16 +1483,19 @@ public class GitLabApi implements AutoCloseable {
      * @return the PackagesApi instance owned by this GitLabApi instance
      */
     public PackagesApi getPackagesApi() {
+        PackagesApi localRef = packagesApi;
 
-        if (packagesApi == null) {
+        if (localRef == null) {
             synchronized (this) {
-                if (packagesApi == null) {
-                    packagesApi = new PackagesApi(this);
+                localRef = packagesApi;
+                if (localRef == null) {
+                    localRef = new PackagesApi(this);
+                    packagesApi = localRef;
                 }
             }
         }
 
-        return (packagesApi);
+        return localRef;
     }
 
     /**
@@ -1421,16 +1505,19 @@ public class GitLabApi implements AutoCloseable {
      * @return the PipelineApi instance owned by this GitLabApi instance
      */
     public PipelineApi getPipelineApi() {
+        PipelineApi localRef = pipelineApi;
 
-        if (pipelineApi == null) {
+        if (localRef == null) {
             synchronized (this) {
-                if (pipelineApi == null) {
-                    pipelineApi = new PipelineApi(this);
+                localRef = pipelineApi;
+                if (localRef == null) {
+                    localRef = new PipelineApi(this);
+                    pipelineApi = localRef;
                 }
             }
         }
 
-        return (pipelineApi);
+        return localRef;
     }
 
     /**
@@ -1440,16 +1527,19 @@ public class GitLabApi implements AutoCloseable {
      * @return the ProjectApi instance owned by this GitLabApi instance
      */
     public ProjectApi getProjectApi() {
+        ProjectApi localRef = projectApi;
 
-        if (projectApi == null) {
+        if (localRef == null) {
             synchronized (this) {
-                if (projectApi == null) {
-                    projectApi = new ProjectApi(this);
+                localRef = projectApi;
+                if (localRef == null) {
+                    localRef = new ProjectApi(this);
+                    projectApi = localRef;
                 }
             }
         }
 
-        return (projectApi);
+        return localRef;
     }
 
     /**
@@ -1459,16 +1549,19 @@ public class GitLabApi implements AutoCloseable {
      * @return the ProtectedBranchesApi instance owned by this GitLabApi instance
      */
     public ProtectedBranchesApi getProtectedBranchesApi() {
+        ProtectedBranchesApi localRef = protectedBranchesApi;
 
-        if (this.protectedBranchesApi == null) {
+        if (localRef == null) {
             synchronized (this) {
-                if (this.protectedBranchesApi == null) {
-                    this.protectedBranchesApi = new ProtectedBranchesApi(this);
+                localRef = protectedBranchesApi;
+                if (localRef == null) {
+                    localRef = new ProtectedBranchesApi(this);
+                    protectedBranchesApi = localRef;
                 }
             }
         }
 
-        return (this.protectedBranchesApi);
+        return localRef;
     }
 
     /**
@@ -1478,16 +1571,19 @@ public class GitLabApi implements AutoCloseable {
      * @return the ReleaseLinksApi instance owned by this GitLabApi instance
      */
     public ReleaseLinksApi getReleaseLinksApi() {
+        ReleaseLinksApi localRef = releaseLinksApi;
 
-        if (releaseLinksApi == null) {
+        if (localRef == null) {
             synchronized (this) {
-                if (releaseLinksApi == null) {
-                    releaseLinksApi = new ReleaseLinksApi(this);
+                localRef = releaseLinksApi;
+                if (localRef == null) {
+                    localRef = new ReleaseLinksApi(this);
+                    releaseLinksApi = localRef;
                 }
             }
         }
 
-        return releaseLinksApi;
+        return localRef;
     }
 
     /**
@@ -1497,16 +1593,19 @@ public class GitLabApi implements AutoCloseable {
      * @return the ReleasesApi instance owned by this GitLabApi instance
      */
     public ReleasesApi getReleasesApi() {
+        ReleasesApi localRef = releasesApi;
 
-        if (releasesApi == null) {
+        if (localRef == null) {
             synchronized (this) {
-                if (releasesApi == null) {
-                    releasesApi = new ReleasesApi(this);
+                localRef = releasesApi;
+                if (localRef == null) {
+                    localRef = new ReleasesApi(this);
+                    releasesApi = localRef;
                 }
             }
         }
 
-        return (releasesApi);
+        return localRef;
     }
 
     /**
@@ -1536,16 +1635,19 @@ public class GitLabApi implements AutoCloseable {
      * @return the RepositoryFileApi instance owned by this GitLabApi instance
      */
     public RepositoryFileApi getRepositoryFileApi() {
+        RepositoryFileApi localRef = repositoryFileApi;
 
-        if (repositoryFileApi == null) {
+        if (localRef == null) {
             synchronized (this) {
-                if (repositoryFileApi == null) {
-                    repositoryFileApi = new RepositoryFileApi(this);
+                localRef = repositoryFileApi;
+                if (localRef == null) {
+                    localRef = new RepositoryFileApi(this);
+                    repositoryFileApi = localRef;
                 }
             }
         }
 
-        return (repositoryFileApi);
+        return localRef;
     }
 
     /**
@@ -1555,16 +1657,19 @@ public class GitLabApi implements AutoCloseable {
      * @return the ResourceLabelEventsApi instance owned by this GitLabApi instance
      */
     public ResourceLabelEventsApi getResourceLabelEventsApi() {
+        ResourceLabelEventsApi localRef = resourceLabelEventsApi;
 
-        if (resourceLabelEventsApi == null) {
+        if (localRef == null) {
             synchronized (this) {
-                if (resourceLabelEventsApi == null) {
-                    resourceLabelEventsApi = new ResourceLabelEventsApi(this);
+                localRef = resourceLabelEventsApi;
+                if (localRef == null) {
+                    localRef = new ResourceLabelEventsApi(this);
+                    resourceLabelEventsApi = localRef;
                 }
             }
         }
 
-        return (resourceLabelEventsApi);
+        return localRef;
     }
 
     /**
@@ -1574,16 +1679,19 @@ public class GitLabApi implements AutoCloseable {
      * @return the ResourceStateEventsApi instance owned by this GitLabApi instance
      */
     public ResourceStateEventsApi getResourceStateEventsApi() {
+        ResourceStateEventsApi localRef = resourceStateEventsApi;
 
-        if (resourceStateEventsApi == null) {
+        if (localRef == null) {
             synchronized (this) {
-                if (resourceStateEventsApi == null) {
-                    resourceStateEventsApi = new ResourceStateEventsApi(this);
+                localRef = resourceStateEventsApi;
+                if (localRef == null) {
+                    localRef = new ResourceStateEventsApi(this);
+                    resourceStateEventsApi = localRef;
                 }
             }
         }
 
-        return (resourceStateEventsApi);
+        return localRef;
     }
 
     /**
@@ -1593,16 +1701,19 @@ public class GitLabApi implements AutoCloseable {
      * @return the RunnerApi instance owned by this GitLabApi instance
      */
     public RunnersApi getRunnersApi() {
+        RunnersApi localRef = runnersApi;
 
-        if (runnersApi == null) {
+        if (localRef == null) {
             synchronized (this) {
-                if (runnersApi == null) {
-                    runnersApi = new RunnersApi(this);
+                localRef = runnersApi;
+                if (localRef == null) {
+                    localRef = new RunnersApi(this);
+                    runnersApi = localRef;
                 }
             }
         }
 
-        return (runnersApi);
+        return localRef;
     }
 
     /**
@@ -1612,16 +1723,19 @@ public class GitLabApi implements AutoCloseable {
      * @return the SearchApi instance owned by this GitLabApi instance
      */
     public SearchApi getSearchApi() {
+        SearchApi localRef = searchApi;
 
-        if (searchApi == null) {
+        if (localRef == null) {
             synchronized (this) {
-                if (searchApi == null) {
-                    searchApi = new SearchApi(this);
+                localRef = searchApi;
+                if (localRef == null) {
+                    localRef = new SearchApi(this);
+                    searchApi = localRef;
                 }
             }
         }
 
-        return (searchApi);
+        return localRef;
     }
 
     /**
@@ -1632,6 +1746,7 @@ public class GitLabApi implements AutoCloseable {
      */
     public ServicesApi getServicesApi() {
         ServicesApi result = servicesApi;
+
         if (result == null) {
             synchronized (this) {
                 result = servicesApi;
@@ -1641,6 +1756,7 @@ public class GitLabApi implements AutoCloseable {
                 }
             }
         }
+
         return result;
     }
 
@@ -1651,16 +1767,19 @@ public class GitLabApi implements AutoCloseable {
      * @return the SystemHooksApi instance owned by this GitLabApi instance
      */
     public SystemHooksApi getSystemHooksApi() {
+        SystemHooksApi localRef = systemHooksApi;
 
-        if (systemHooksApi == null) {
+        if (localRef == null) {
             synchronized (this) {
-                if (systemHooksApi == null) {
-                    systemHooksApi = new SystemHooksApi(this);
+                localRef = systemHooksApi;
+                if (localRef == null) {
+                    localRef = new SystemHooksApi(this);
+                    systemHooksApi = localRef;
                 }
             }
         }
 
-        return (systemHooksApi);
+        return localRef;
     }
 
     /**
@@ -1670,35 +1789,41 @@ public class GitLabApi implements AutoCloseable {
      * @return the TagsApi instance owned by this GitLabApi instance
      */
     public TagsApi getTagsApi() {
+        TagsApi localRef = tagsApi;
 
-        if (tagsApi == null) {
+        if (localRef == null) {
             synchronized (this) {
-                if (tagsApi == null) {
-                    tagsApi = new TagsApi(this);
+                localRef = tagsApi;
+                if (localRef == null) {
+                    localRef = new TagsApi(this);
+                    tagsApi = localRef;
                 }
             }
         }
 
-        return (tagsApi);
+        return localRef;
     }
 
     /**
-     * Gets the TagsApi instance owned by this GitLabApi instance. The TagsApi is used
+     * Gets the TopicsApi instance owned by this GitLabApi instance. The TopicsApi is used
      * to perform all tag and release related API calls.
      *
-     * @return the TagsApi instance owned by this GitLabApi instance
+     * @return the TopicsApi instance owned by this GitLabApi instance
      */
     public TopicsApi getTopicsApi() {
+        TopicsApi localRef = topicsApi;
 
-        if (topicsApi == null) {
+        if (localRef == null) {
             synchronized (this) {
-                if (topicsApi == null) {
-                    topicsApi = new TopicsApi(this);
+                localRef = topicsApi;
+                if (localRef == null) {
+                    localRef = new TopicsApi(this);
+                    topicsApi = localRef;
                 }
             }
         }
 
-        return (topicsApi);
+        return localRef;
     }
 
     /**
@@ -1708,15 +1833,19 @@ public class GitLabApi implements AutoCloseable {
      * @return the SnippetsApi instance owned by this GitLabApi instance
      */
     public SnippetsApi getSnippetApi() {
-        if (snippetsApi == null) {
+        SnippetsApi localRef = snippetsApi;
+
+        if (localRef == null) {
             synchronized (this) {
-                if (snippetsApi == null) {
-                    snippetsApi = new SnippetsApi(this);
+                localRef = snippetsApi;
+                if (localRef == null) {
+                    localRef = new SnippetsApi(this);
+                    snippetsApi = localRef;
                 }
             }
         }
 
-        return snippetsApi;
+        return localRef;
     }
 
     /**
@@ -1726,6 +1855,7 @@ public class GitLabApi implements AutoCloseable {
      */
     public TodosApi getTodosApi() {
         TodosApi result = todosApi;
+
         if (result == null) {
             synchronized (this) {
                 result = todosApi;
@@ -1735,6 +1865,7 @@ public class GitLabApi implements AutoCloseable {
                 }
             }
         }
+
         return result;
     }
 
@@ -1745,16 +1876,19 @@ public class GitLabApi implements AutoCloseable {
      * @return the UserApi instance owned by this GitLabApi instance
      */
     public UserApi getUserApi() {
+        UserApi localRef = userApi;
 
-        if (userApi == null) {
+        if (localRef == null) {
             synchronized (this) {
-                if (userApi == null) {
-                    userApi = new UserApi(this);
+                localRef = userApi;
+                if (localRef == null) {
+                    localRef = new UserApi(this);
+                    userApi = localRef;
                 }
             }
         }
 
-        return (userApi);
+        return localRef;
     }
 
     /**
@@ -1763,15 +1897,19 @@ public class GitLabApi implements AutoCloseable {
      * @return the WikisApi instance owned by this GitLabApi instance
      */
     public WikisApi getWikisApi() {
-        if (wikisApi == null) {
+        WikisApi localRef = wikisApi;
+
+        if (localRef == null) {
             synchronized (this) {
-                if (wikisApi == null) {
-                    wikisApi = new WikisApi(this);
+                localRef = wikisApi;
+                if (localRef == null) {
+                    localRef = new WikisApi(this);
+                    wikisApi = localRef;
                 }
             }
         }
 
-        return wikisApi;
+        return localRef;
     }
 
     /**
@@ -1780,12 +1918,19 @@ public class GitLabApi implements AutoCloseable {
      * @return the KeysApi instance owned by this GitLabApi instance
      */
     public KeysApi getKeysAPI() {
-        synchronized (this) {
-            if (keysApi == null) {
-                keysApi = new KeysApi(this);
+        KeysApi localRef = keysApi;
+
+        if (localRef == null) {
+            synchronized (this) {
+                localRef = keysApi;
+                if (localRef == null) {
+                    localRef = new KeysApi(this);
+                    keysApi = localRef;
+                }
             }
         }
-        return keysApi;
+
+        return localRef;
     }
 
     /**
@@ -1795,14 +1940,20 @@ public class GitLabApi implements AutoCloseable {
      * @return the MetadataApi instance owned by this GitlabApi instance
      */
     public MetadataApi getMetadataApi() {
-        synchronized (this) {
-            if (metadataApi == null) {
-                metadataApi = new MetadataApi(this);
+        MetadataApi localRef = metadataApi;
+
+        if (localRef == null) {
+            synchronized (this) {
+                localRef = metadataApi;
+                if (localRef == null) {
+                    localRef = new MetadataApi(this);
+                    metadataApi = localRef;
+                }
             }
         }
-        return metadataApi;
-    }
 
+        return localRef;
+    }
 
     /**
      * Create and return an Optional instance associated with a GitLabApiException.
